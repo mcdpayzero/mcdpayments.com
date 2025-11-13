@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchant Application - MCD Payments</title>
+  <meta name="description" content="Apply for MCD Payments merchant account in minutes. Secure setup for credit card processing, POS, and more. No setup fees, fast approval.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: 'hsl(var(--primary))', accent: 'hsl(var(--accent))' } } }
+    }
+  </script>
+</head>
+<body class="bg-background text-foreground">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-card/95 backdrop-blur-md shadow-md border-b border-border/20">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-primary">MCD Payments</div>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="index.html" class="hover:text-primary">Home</a></li>
+        <li><a href="services.html" class="hover:text-primary">Services</a></li>
+        <li><a href="merchant-application.html" class="hover:text-primary">Apply</a></li>
+      </ul>
+      <a href="services.html" class="text-primary hover:underline">Back to Services</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="gradient-hero text-white py-20 px-4 text-center">
+    <div class="container mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Merchant Application</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Get approved in 24-48 hours with no credit check or setup fees. Secure your account and start processing payments today.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <span class="bg-success/20 text-success px-4 py-2 rounded-full text-sm">Fast Approval</span>
+        <span class="bg-accent/20 text-accent-foreground px-4 py-2 rounded-full text-sm">Free Setup</span>
+      </div>
+      <p class="text-lg mb-8">Takes ~5 minutes | Confidential & Secure</p>
+    </div>
+  </section>
+
+  <!-- Application Form Section -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-2xl">
+      <!-- Step Indicators -->
+      <div class="flex justify-between mb-8 text-center">
+        <div class="step-indicator flex-1 p-2 bg-secondary-muted rounded text-muted-foreground font-medium">1. Business Info</div>
+        <div class="step-indicator flex-1 p-2 bg-secondary-muted rounded text-muted-foreground font-medium">2. Contact</div>
+        <div class="step-indicator flex-1 p-2 bg-secondary-muted rounded text-muted-foreground font-medium">3. Banking</div>
+        <div class="step-indicator flex-1 p-2 bg-secondary-muted rounded text-muted-foreground font-medium">4. Review</div>
+      </div>
+
+      <form id="merchantForm" class="space-y-8" action="#" method="POST">
+        <!-- Step 1: Business Info -->
+        <div class="step active">
+          <fieldset class="border border-border rounded-lg p-6 bg-card shadow-sm">
+            <legend class="text-lg font-semibold mb-4">Business Information</legend>
+            <div class="grid md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Business Legal Name" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="text" placeholder="Doing Business As (DBA)" class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="text" placeholder="EIN / Tax ID" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <select class="w-full px-3 py-2 border border-border rounded-lg" required>
+                <option value="">Business Type (e.g., Retail, Restaurant)</option>
+                <option>Retail</option>
+                <option>Restaurant</option>
+                <option>E-commerce</option>
+              </select>
+              <input type="text" placeholder="Estimated Monthly Volume ($)" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="number" placeholder="Average Ticket Size ($)" step="0.01" class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="url" placeholder="Website (if applicable)" class="w-full px-3 py-2 border border-border rounded-lg">
+            </div>
+          </fieldset>
+          <div class="form-nav">
+            <button type="button" class="btn-prev" style="display: none;">Previous</button>
+            <button type="button" class="btn-next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Contact -->
+        <div class="step">
+          <fieldset class="border border-border rounded-lg p-6 bg-card shadow-sm">
+            <legend class="text-lg font-semibold mb-4">Contact Information</legend>
+            <div class="grid md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Owner/Principal Full Name" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="tel" placeholder="Phone Number" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="email" placeholder="Email Address" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="text" placeholder="Business Address" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="text" placeholder="City, State, ZIP" required class="w-full px-3 py-2 border border-border rounded-lg">
+            </div>
+          </fieldset>
+          <div class="form-nav">
+            <button type="button" class="btn-prev">Previous</button>
+            <button type="button" class="btn-next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Banking -->
+        <div class="step">
+          <fieldset class="border border-border rounded-lg p-6 bg-card shadow-sm">
+            <legend class="text-lg font-semibold mb-4">Banking Details</legend>
+            <div class="grid md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Bank Name" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="text" placeholder="Routing Number" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <input type="password" placeholder="Account Number" required class="w-full px-3 py-2 border border-border rounded-lg">
+              <select class="w-full px-3 py-2 border border-border rounded-lg">
+                <option value="">Account Type (Checking/Savings)</option>
+                <option>Checking</option>
+                <option>Savings</option>
+              </select>
+            </div>
+            <p class="text-sm text-muted-foreground mt-2">We'll verify this securely—no sensitive data stored.</p>
+          </fieldset>
+          <div class="form-nav">
+            <button type="button" class="btn-prev">Previous</button>
+            <button type="button" class="btn-next">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Documents & Review -->
+        <div class="step">
+          <fieldset class="border border-border rounded-lg p-6 bg-card shadow-sm">
+            <legend class="text-lg font-semibold mb-4">Upload Documents (Optional for Faster Approval)</legend>
+            <div class="space-y-4">
+              <label class="block text-sm font-medium">Voided Check or Bank Letter</label>
+              <input type="file" accept=".pdf,.jpg,.png" class="w-full px-3 py-2 border border-border rounded-lg">
+              <label class="block text-sm font-medium">Business License or Articles of Incorporation</label>
+              <input type="file" accept=".pdf,.jpg,.png" class="w-full px-3 py-2 border border-border rounded-lg">
+              <label class="block text-sm font-medium">ID of Owner/Principal</label>
+              <input type="file" accept=".pdf,.jpg,.png" class="w-full px-3 py-2 border border-border rounded-lg">
+            </div>
+            <p class="text-sm text-muted-foreground mt-2">Files up to 10MB. We'll process and delete after verification.</p>
+            <div id="formSummary"></div>
+          </fieldset>
+          <div class="form-nav">
+            <button type="button" class="btn-prev">Previous</button>
+            <button type="submit" class="btn-submit" style="display: none;">Submit Application</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="py-16 px-4 bg-secondary-muted">
+    <div class="container mx-auto max-w-2xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>How long until approval?</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p class="text-muted-foreground p-4">Typically 24-48 hours. We'll email you with next steps.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>Is there a credit check?</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p class="text-muted-foreground p-4">No personal credit check— we focus on your business volume and history.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>What documents are required?</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p class="text-muted-foreground p-4">EIN, bank details, and optional uploads for faster processing. Full list in email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-primary-foreground py-8 px-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 MCD Payments. All rights reserved. | South Florida's Trusted Payment Partner.</p>
+      <ul class="flex justify-center space-x-6 mt-4">
+        <li><a href="#" class="hover:text-primary-foreground">Privacy</a></li>
+        <li><a href="#" class="hover:text-primary-foreground">Terms</a></li>
+        <li><a href="#" class="hover:text-primary-foreground">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

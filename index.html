@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCD Payments - Secure Merchant Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: 'hsl(var(--primary))', accent: 'hsl(var(--accent))' } } }
+    }
+  </script>
+</head>
+<body class="bg-background text-foreground">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-card/95 backdrop-blur-md shadow-md border-b border-border/20">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-primary">MCD Payments</div>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#services" class="hover:text-primary">Services</a></li>
+        <li><a href="services.html" class="hover:text-primary">Products</a></li>
+        <li><a href="merchant-application.html" class="hover:text-primary">Apply Now</a></li>
+        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+      </ul>
+      <button class="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary-hover">Get Quote</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="gradient-hero text-white py-20 px-4 text-center">
+    <div class="container mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Professional Payment Solutions</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Secure credit card processing, POS systems, and crypto gateways for your business. Low fees, high security.</p>
+      <form class="max-w-md mx-auto space-y-4">
+        <input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-lg bg-white/20 text-white placeholder-white/70">
+        <button type="submit" class="w-full bg-accent text-accent-foreground py-2 rounded-lg hover:bg-accent-hover">Start Saving Today</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Services Teaser Section -->
+  <section id="services" class="py-16 px-4 bg-secondary-muted">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-semibold mb-2">Credit Card Processing</h3>
+          <p class="text-muted-foreground mb-4">Low-rate merchant services for retail and online.</p>
+          <button class="text-accent hover:underline">Learn More</button>
+        </div>
+        <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-semibold mb-2">POS Systems</h3>
+          <p class="text-muted-foreground mb-4">Advanced terminals with Clover & KORONA integration.</p>
+          <button class="text-accent hover:underline">Learn More</button>
+        </div>
+        <div class="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-xl font-semibold mb-2">Crypto Payments</h3>
+          <p class="text-muted-foreground mb-4">Secure gateways for digital currencies.</p>
+          <button class="text-accent hover:underline">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-primary-foreground py-8 px-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 MCD Payments. All rights reserved. | South Florida's Trusted Partner.</p>
+      <ul class="flex justify-center space-x-6 mt-4">
+        <li><a href="#" class="hover:text-primary-foreground">Privacy</a></li>
+        <li><a href="#" class="hover:text-primary-foreground">Terms</a></li>
+        <li><a href="#" class="hover:text-primary-foreground">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
