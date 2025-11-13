@@ -139,4 +139,30 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Handle non-linked buttons (e.g., redirects)
+  document.querySelectorAll('button:not([type="submit"]):not(.btn-nav)').forEach(btn => {
+    if (!btn.onclick) {
+      btn.addEventListener('click', function() {
+        // Default: Go to contact; customize per class/ID
+        if (this.textContent.includes('Quote') || this.textContent.includes('Demo')) {
+          window.location.href = 'contact.html';
+        } else if (this.textContent.includes('Learn More')) {
+          window.location.href = 'services.html';
+        } else {
+          alert('Coming soon!'); // Fallback
+        }
+      });
+    }
+  });
+
+  // Form submissions (for heroes/CTAs)
+  document.querySelectorAll('form:not(#merchantForm):not(#contactForm)').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // TODO: EmailJS/Netlify
+      alert('Request sent! We\'ll contact you soon.');
+      this.reset();
+    });
+  });
 });
