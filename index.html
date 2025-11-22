@@ -64,87 +64,100 @@
     </div>
   </section>
 
-  <section id="fee-calculator-section" class="content-section">
+<section id="fee-calculator-section" class="py-16 px-4 bg-secondary-muted">
     <div class="container mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Calculate Your Credit Card Processing Savings</h1>
-    <p class="text-xl mb-8 max-w-2xl mx-auto">Use our free processing fee calculator to discover exactly how much your business could save monthly by eliminating fees with MCD Payments' compliant programs.</p>
+        <h2 class="text-3xl font-bold text-center mb-4 text-foreground">Calculate Your Credit Card Processing Savings</h2>
+        <p class="text-lg mb-12 max-w-2xl mx-auto text-center text-muted-foreground">Use our free processing fee calculator to discover exactly how much your business could save monthly by eliminating fees with MCD Payments' compliant programs.</p>
 
-    <div class="fee-calculator-container">
-        <form id="savings-calculator">
-            <label for="monthly-volume">Monthly Processing Volume ($)</label>
-            <input type="number" id="monthly-volume" placeholder="e.g., 25000" required min="100">
+        <div class="max-w-md mx-auto p-8 bg-card rounded-xl shadow-card">
+            <form id="savings-calculator" class="space-y-6">
+                <div>
+                    <label for="monthly-volume" class="block text-sm font-medium text-foreground mb-1">Monthly Processing Volume ($)</label>
+                    <input type="number" id="monthly-volume" placeholder="e.g., 25000" required min="100"
+                        class="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:ring-accent focus:border-accent transition-all duration-200">
+                </div>
 
-            <label for="monthly-fees">Total Monthly Processing Fee ($)</label>
-            <input type="number" id="monthly-fees" placeholder="e.g., 850" required min="1">
+                <div>
+                    <label for="monthly-fees" class="block text-sm font-medium text-foreground mb-1">Total Monthly Processing Fee ($)</label>
+                    <input type="number" id="monthly-fees" placeholder="e.g., 850" required min="1"
+                        class="w-full px-4 py-2 border border-input rounded-lg bg-background text-foreground focus:ring-accent focus:border-accent transition-all duration-200">
+                </div>
 
-            <button type="submit" id="calculate-btn">Calculate My Savings</button>
-        </form>
+                <button type="submit" id="calculate-btn"
+                    class="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors duration-200">
+                    Calculate My Savings
+                </button>
+            </form>
 
-        <div id="results-output" class="hidden">
-            <h3>Your Current Effective Rate: <span id="current-rate"></span></h3>
-            <div class="savings-highlight">
-                <p>Estimated Monthly Savings with **MCD Payments**:</p>
-                <span id="monthly-savings" class="large-number"></span>
+            <div id="results-output" class="hidden pt-6 mt-6 border-t border-border text-center">
+                <h3 class="text-xl font-semibold mb-3 text-foreground">Your Current Effective Rate: <span id="current-rate" class="text-accent"></span></h3>
+                
+                <div class="p-4 rounded-lg border border-success/30 bg-success/10 text-success mb-4">
+                    <p class="text-sm font-medium">Estimated Monthly Savings with **MCD Payments**:</p>
+                    <span id="monthly-savings" class="block text-3xl font-bold mt-1"></span>
+                </div>
+                
+                <p class="text-sm text-muted-foreground">Estimated Annual Savings: <span id="annual-savings" class="font-semibold text-foreground"></span></p>
             </div>
-            <p>Estimated Annual Savings: <span id="annual-savings"></span></p>
         </div>
     </div>
 </section>
 
-<hr>
+<hr class="border-border">
 
-<section id="comparison-section" class="content-section">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Processing Options Comparison</h2>
-    <p class="text-xl mb-8 max-w-2xl mx-auto">See how MCD Payments eliminates high costs and hidden fees compared to typical processors.</p>
-    
-    <div class="comparison-table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Your Current Processor</th>
-                    <th class="mcd-primary">MCD Cash Discount Program</th>
-                    <th class="mcd-secondary">MCD Traditional Processing</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>**Transaction Fees**</td>
-                    <td>3.5% - 4.0% per transaction</td>
-                    <td class="mcd-primary">**0% Processing Fees***</td>
-                    <td class="mcd-secondary">Competitive rates below 3.5%</td>
-                </tr>
-                <tr>
-                    <td>**Monthly Fees**</td>
-                    <td>$25 - $50+ (Statement, Gateway, PCI)</td>
-                    <td class="mcd-primary">Equipment rental only</td>
-                    <td class="mcd-secondary">Transparent, itemized pricing</td>
-                </tr>
-                <tr>
-                    <td>**Setup Fees**</td>
-                    <td>$99 - $299 upfront</td>
-                    <td class="mcd-primary">Free setup</td>
-                    <td class="mcd-secondary">Free setup</td>
-                </tr>
-                <tr>
-                    <td>**Contract Required**</td>
-                    <td>Yes, 1-3 year contract</td>
-                    <td class="mcd-primary">**No Contracts**</td>
-                    <td class="mcd-secondary">No long-term contracts</td>
-                </tr>
-                <tr>
-                    <td>**Compliance**</td>
-                    <td>Standard PCI</td>
-                    <td class="mcd-primary">Fully Dodd-Frank & Card Network Compliant</td>
-                    <td class="mcd-secondary">Standard PCI</td>
-                </tr>
-            </tbody>
-        </table>
+<section id="comparison-section" class="py-16 px-4 bg-background">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4 text-foreground">Processing Options Comparison</h2>
+        <p class="text-lg mb-12 max-w-2xl mx-auto text-center text-muted-foreground">See how MCD Payments eliminates high costs and hidden fees compared to typical processors.</p>
+        
+        <div class="overflow-x-auto shadow-md rounded-lg border border-border">
+            <table class="w-full min-w-[700px] text-sm text-left">
+                <thead class="bg-primary text-primary-foreground">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 rounded-tl-lg">Feature</th>
+                        <th scope="col" class="px-6 py-3">Your Current Processor</th>
+                        <th scope="col" class="px-6 py-3 bg-accent text-accent-foreground">MCD Cash Discount Program</th>
+                        <th scope="col" class="px-6 py-3 rounded-tr-lg">MCD Traditional Processing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-card border-b border-border">
+                        <td class="px-6 py-4 font-semibold text-foreground">Transaction Fees</td>
+                        <td class="px-6 py-4">3.5% - 4.0% per transaction</td>
+                        <td class="px-6 py-4 bg-accent/20 font-bold text-accent">0% Processing Fees*</td>
+                        <td class="px-6 py-4 bg-secondary-muted/50">Competitive rates below 3.5%</td>
+                    </tr>
+                    <tr class="bg-secondary-muted border-b border-border">
+                        <td class="px-6 py-4 font-semibold text-foreground">Monthly Fees</td>
+                        <td class="px-6 py-4">$25 - $50+ (Statement, Gateway, PCI)</td>
+                        <td class="px-6 py-4 bg-accent/20 font-medium text-accent">Equipment rental only</td>
+                        <td class="px-6 py-4 bg-secondary-muted/50">Transparent, itemized pricing</td>
+                    </tr>
+                    <tr class="bg-card border-b border-border">
+                        <td class="px-6 py-4 font-semibold text-foreground">Setup Fees</td>
+                        <td class="px-6 py-4">$99 - $299 upfront</td>
+                        <td class="px-6 py-4 bg-accent/20 text-accent">Free setup</td>
+                        <td class="px-6 py-4 bg-secondary-muted/50">Free setup</td>
+                    </tr>
+                    <tr class="bg-secondary-muted border-b border-border">
+                        <td class="px-6 py-4 font-semibold text-foreground">Contract Required</td>
+                        <td class="px-6 py-4">Yes, 1-3 year contract</td>
+                        <td class="px-6 py-4 bg-accent/20 font-bold text-accent">No Contracts</td>
+                        <td class="px-6 py-4 bg-secondary-muted/50">No long-term contracts</td>
+                    </tr>
+                    <tr class="bg-card">
+                        <td class="px-6 py-4 font-semibold text-foreground">Compliance</td>
+                        <td class="px-6 py-4">Standard PCI</td>
+                        <td class="px-6 py-4 bg-accent/20 text-accent">Fully Dodd-Frank & Card Network Compliant</td>
+                        <td class="px-6 py-4 bg-secondary-muted/50">Standard PCI</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-sm mt-4 text-center text-muted-foreground disclaimer"><em>*0% applies to the merchant's portion of transaction fees through the cash discount model.</em></p>
     </div>
-    <p class="disclaimer"><em>*0% applies to the merchant's portion of transaction fees through the cash discount model.</em></p>
 </section>
-
+  
   <!-- Footer -->
   <footer class="bg-primary text-primary-foreground py-8 px-4">
     <div class="container mx-auto text-center">
@@ -161,6 +174,7 @@
 </body>
 
 </html>
+
 
 
 
