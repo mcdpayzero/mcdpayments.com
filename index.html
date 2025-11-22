@@ -64,6 +64,85 @@
     </div>
   </section>
 
+  <section id="fee-calculator-section" class="content-section">
+    <h1>Calculate Your Credit Card Processing Savings</h1>
+    <p>Use our free processing fee calculator to discover exactly how much your business could save monthly by eliminating fees with MCD Payments' compliant programs.</p>
+
+    <div class="fee-calculator-container">
+        <form id="savings-calculator">
+            <label for="monthly-volume">Monthly Processing Volume ($)</label>
+            <input type="number" id="monthly-volume" placeholder="e.g., 25000" required min="100">
+
+            <label for="monthly-fees">Total Monthly Processing Fee ($)</label>
+            <input type="number" id="monthly-fees" placeholder="e.g., 850" required min="1">
+
+            <button type="submit" id="calculate-btn">Calculate My Savings</button>
+        </form>
+
+        <div id="results-output" class="hidden">
+            <h3>Your Current Effective Rate: <span id="current-rate"></span></h3>
+            <div class="savings-highlight">
+                <p>Estimated Monthly Savings with **MCD Payments**:</p>
+                <span id="monthly-savings" class="large-number"></span>
+            </div>
+            <p>Estimated Annual Savings: <span id="annual-savings"></span></p>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="comparison-section" class="content-section">
+    <h2>Processing Options Comparison</h2>
+    <p>See how MCD Payments eliminates high costs and hidden fees compared to typical processors.</p>
+    
+    <div class="comparison-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Your Current Processor</th>
+                    <th class="mcd-primary">MCD Cash Discount Program</th>
+                    <th class="mcd-secondary">MCD Traditional Processing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>**Transaction Fees**</td>
+                    <td>3.5% - 4.0% per transaction</td>
+                    <td class="mcd-primary">**0% Processing Fees***</td>
+                    <td class="mcd-secondary">Competitive rates below 3.5%</td>
+                </tr>
+                <tr>
+                    <td>**Monthly Fees**</td>
+                    <td>$25 - $50+ (Statement, Gateway, PCI)</td>
+                    <td class="mcd-primary">Equipment rental only</td>
+                    <td class="mcd-secondary">Transparent, itemized pricing</td>
+                </tr>
+                <tr>
+                    <td>**Setup Fees**</td>
+                    <td>$99 - $299 upfront</td>
+                    <td class="mcd-primary">Free setup</td>
+                    <td class="mcd-secondary">Free setup</td>
+                </tr>
+                <tr>
+                    <td>**Contract Required**</td>
+                    <td>Yes, 1-3 year contract</td>
+                    <td class="mcd-primary">**No Contracts**</td>
+                    <td class="mcd-secondary">No long-term contracts</td>
+                </tr>
+                <tr>
+                    <td>**Compliance**</td>
+                    <td>Standard PCI</td>
+                    <td class="mcd-primary">Fully Dodd-Frank & Card Network Compliant</td>
+                    <td class="mcd-secondary">Standard PCI</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="disclaimer"><em>*0% applies to the merchant's portion of transaction fees through the cash discount model.</em></p>
+</section>
+
   <!-- Footer -->
   <footer class="bg-primary text-primary-foreground py-8 px-4">
     <div class="container mx-auto text-center">
@@ -75,10 +154,11 @@
       </ul>
     </div>
   </footer>
-
+  <script src="js/calculator.js"></script>
   <script src="script.js"></script>
 </body>
 
 </html>
+
 
 
