@@ -205,47 +205,56 @@ html, body {
   margin: 1rem 0;
 }
 
-/* === FEE CALCULATOR STYLES === */
+/* === FEE CALCULATOR STYLES (MATCHING MCD THEME) === */
 .fee-calculator-container {
     max-width: 450px;
     margin: 20px auto;
     padding: 30px;
-    background-color: #f7f9fc; /* Light background */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: hsl(var(--card)); /* White Card Background */
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card); /* Soft Shadow */
+    font-family: Inter, system-ui, sans-serif;
 }
 
-label {
+.fee-calculator-container h2 {
+    color: hsl(var(--foreground));
+    margin-top: 0;
+}
+
+.fee-calculator-container label {
     display: block;
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: 500;
-    color: #333;
+    color: hsl(var(--foreground));
 }
 
-input[type="number"] {
+.fee-calculator-container input[type="number"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-sizing: border-box; 
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    box-sizing: border-box;
 }
 
 #calculate-btn {
     width: 100%;
     padding: 15px;
     margin-top: 25px;
-    background-color: #007bff; /* MCD Payments Primary Color */
-    color: white;
+    background: hsl(var(--primary)); /* Primary color for main CTA */
+    color: hsl(var(--primary-foreground));
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius);
     font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s ease;
 }
 
 #calculate-btn:hover {
-    background-color: #0056b3;
+    background-color: hsl(var(--primary-hover));
 }
 
 /* Calculator Results */
@@ -256,76 +265,80 @@ input[type="number"] {
 #results-output {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid hsl(var(--border));
     text-align: center;
 }
 
 .savings-highlight {
-    background-color: #d4edda; /* Light green background for savings */
-    color: #155724;
+    /* Uses a light success background for savings emphasis */
+    background-color: hsl(var(--success-foreground, 0 0% 100%)); /* Start with white... */
+    background-color: hsla(var(--success), 0.1); /* ...then override with a successful, light shade */
+    color: hsl(var(--success)); /* Green Accent Text */
     padding: 15px;
-    border-radius: 6px;
+    border-radius: var(--radius);
     margin: 15px 0;
+    border: 1px solid hsla(var(--success), 0.3);
 }
 
 .large-number {
     display: block;
     font-size: 2.2rem;
     font-weight: 700;
-    color: #28a745; /* Green for profit/savings */
+    color: hsl(var(--success)); /* Green Accent for profit/savings */
     margin-top: 5px;
 }
 
-/* === COMPARISON TABLE STYLES === */
+/* === COMPARISON TABLE STYLES (MATCHING MCD THEME) === */
 .comparison-table-container {
-    overflow-x: auto; /* Ensures table is responsive on small screens */
-    margin: 20px 0;
+    overflow-x: auto;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
 }
 
 .comparison-table-container table {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
     font-size: 0.9em;
-    min-width: 600px; /* Minimum width for the table */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    min-width: 700px;
 }
 
 .comparison-table-container thead tr {
-    background-color: #007bff; /* Primary header color */
-    color: #ffffff;
+    background: var(--gradient-primary); /* Primary Gradient Header */
+    color: hsl(var(--primary-foreground));
     text-align: left;
 }
 
 .comparison-table-container th,
 .comparison-table-container td {
     padding: 12px 15px;
-    border: 1px solid #dddddd;
+    border: 1px solid hsl(var(--border));
 }
 
 .comparison-table-container tbody tr {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid hsl(var(--border));
 }
 
 .comparison-table-container tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: hsl(var(--secondary-muted)); /* Secondary Muted for zebra striping */
 }
 
 /* Highlighting MCD Payments columns */
 .mcd-primary {
-    background-color: #e6f7ff; /* Very light blue for Cash Discount */
-    font-weight: bold;
-    color: #007bff;
+    background-color: hsl(var(--accent-muted)); /* Lightest Accent */
+    font-weight: 600;
+    color: hsl(var(--accent)); /* Accent Text Color */
 }
 
 .mcd-secondary {
-    background-color: #f0f7ff; /* Slightly different light blue */
-    color: #0056b3;
+    background-color: hsl(var(--secondary-muted)); /* Light Secondary */
+    color: hsl(var(--foreground));
 }
 
 .disclaimer {
     font-size: 0.8em;
-    color: #6c757d;
+    color: hsl(var(--muted-foreground));
     text-align: center;
     margin-top: 10px;
 }
@@ -342,3 +355,4 @@ input[type="number"] {
 .bg-gradient-card { background: var(--gradient-card); }
 
 .shadow-card { box-shadow: var(--shadow-card); }
+
